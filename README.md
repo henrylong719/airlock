@@ -1,4 +1,6 @@
-# Production-Oriented LangGraph API
+# Airlock
+
+**A FastAPI gateway for LangGraph agents — everything in and out gets inspected.**
 
 A reference FastAPI service that wraps a LangGraph agent with security filtering, response caching, rate limiting, structured logging, and observability hooks. It demonstrates patterns that are useful when moving an LLM-powered API toward production, but it is not intended to be deployed unchanged as a fully production-ready system.
 
@@ -43,7 +45,7 @@ flowchart LR
 ## Project structure
 
 ```text
-fastapi-langgraph-production-ready-agent-api/
+airlock/
 ├── app/
 │   ├── main.py          # FastAPI app, endpoints, lifespan wiring
 │   ├── agent.py         # LangGraph agent (primary → fallback → error)
@@ -74,8 +76,8 @@ fastapi-langgraph-production-ready-agent-api/
 ### 1. Clone and configure
 
 ```bash
-git clone git@github.com:henrylong719/fastapi-langgraph-production-ready-agent-api.git
-cd fastapi-langgraph-production-ready-agent-api
+git clone git@github.com:henrylong719/airlock.git
+cd airlock
 cp .env.example .env
 # Edit .env and set OPENAI_API_KEY (and LANGCHAIN_API_KEY if tracing is enabled)
 ```
